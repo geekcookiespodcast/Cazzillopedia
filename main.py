@@ -57,7 +57,8 @@ if __name__ == "__main__":
             del cazz['Data']
         else:
             # convert Data to datetime
-            cazz['Data'] = datetime.strptime(cazz['Data'], '%a %b %d %Y %H:%M:%S GMT%z (%Z)')
+            cazz['Data'] = cazz['Data'][0:24]
+            cazz['Data'] = datetime.strptime(cazz['Data'], '%a %b %d %Y %H:%M:%S')
 
     # Data example:
     #{'Cazzillo'     : 'Altro package manager molto famoso perac è homebrew https://brew.sh/, in particolare cask installa programmi per Mac proprio eliminando lo scarica apri copia in applicazioni etc, tutto da command line https://caskroom.github.io/ #cazzillo',
