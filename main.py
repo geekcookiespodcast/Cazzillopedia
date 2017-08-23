@@ -107,17 +107,16 @@ sizes="144x144">   <LINK href="/public/favicon.ico" rel="shortcut icon">   <!-- 
 <INPUT class="sidebar-checkbox" id="sidebar-checkbox" type="checkbox"> <!-- Toggleable sidebar --> 
 <DIV class="sidebar" id="sidebar">
 <DIV class="sidebar-item">
-<P>Join the Dark Side of the Geek: we have Cookies.</P></DIV><NAV class="sidebar-nav"><A 
-class="sidebar-nav-item" href="http://geekcookies.github.io/episodi/">Home</A><A 
-class="sidebar-nav-item" 
-href="http://geekcookies.github.io/contactus/">Contattaci</A><A class="sidebar-nav-item active" 
-href="http://geekcookies.github.io/episodi/">Episodi</A><A class="sidebar-nav-item" 
-href="http://geekcookies.github.io/whatisthis/">Cos’è GeekCookies</A><A class="sidebar-nav-item" 
-href="http://geekcookies.github.io/whoarewe/">Chi siamo</A><!--Theese elements culd not be the active page:external link--> 
-    <A class="sidebar-nav-item" 
-href="http://geekcookies.github.io/feed.xml">Feed RSS</A><A class="sidebar-nav-item" 
-href="http://geekcookies.github.io/amazon/">Amazon</A><A class="sidebar-nav-item" 
-href="http://geekcookies.github.io/itunes/">iTunes</A></NAV>
+<P>Join the Dark Side of the Geek: we have Cookies.</P></DIV><NAV class="sidebar-nav">
+<A class="sidebar-nav-item" href="http://geekcookies.github.io/episodi/">Home</A>
+<A class="sidebar-nav-item" href="http://geekcookies.github.io/contactus/">Contattaci</A>
+<A class="sidebar-nav-item" href="http://geekcookies.github.io/episodi/">Episodi</A>
+<A class="sidebar-nav-item" href="http://geekcookies.github.io/whatisthis/">Cos’è GeekCookies</A>
+<A class="sidebar-nav-item" href="http://geekcookies.github.io/whoarewe/">Chi siamo</A><!--Theese elements culd not be the active page:external link--> 
+<A class="sidebar-nav-item active" href="">Cazzillopedia</A>
+<A class="sidebar-nav-item" href="http://geekcookies.github.io/feed.xml">Feed RSS</A>
+<A class="sidebar-nav-item" href="http://geekcookies.github.io/amazon/">Amazon</A>
+<A class="sidebar-nav-item" href="http://geekcookies.github.io/itunes/">iTunes</A></NAV>
 <DIV class="sidebar-item">
 <P>    Basato su <A href="http://jekyllrb.com/">jekyll</A> e sul template <A 
 href="http://lanyon.getpoole.com/">poole/lanyon</A>.     </P></DIV></DIV><!-- Wrap is the content to shift when toggling the sidebar. We wrap the
