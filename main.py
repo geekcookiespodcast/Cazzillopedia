@@ -33,84 +33,136 @@ def cazzillo_text_parser(cazzillotext):
     domains = [urlparse(suburl).netloc for suburl in re.findall(r'(https?://[^\s]+)', cazzillotext)]
     return [{'url': u, 'domain': d} for u, d in zip(urls, domains)]
 
+if __name__ == "__main__":
+    # retrieve the file in memory
+    try:
+        with urllib.request.urlopen('https://docs.google.com/spreadsheets/d/1KyLkkGDPqYh6TUgBLaysjX3w6oIm2YPDc7tWffQJeDE/export?format=csv&id=KEY&gid=0') as response:
+            respo = response.read()
+    except:
+        print("Impossibile scaricare il file csv da Google")
+        exit()
 
-# retrieve the file in memory
-try:
-    with urllib.request.urlopen('https://docs.google.com/spreadsheets/d/1KyLkkGDPqYh6TUgBLaysjX3w6oIm2YPDc7tWffQJeDE/export?format=csv&id=KEY&gid=0') as response:
-        respo = response.read()
-except:
-    print("Impossibile scaricare il file csv da Google")
-    exit()
+    # generate a fake file pointer with io
+    fake_file = io.StringIO(respo.decode("utf-8"))
+    # read the fake file in a csv dict and convert to list
+    cazzillidict = list(csv.DictReader(fake_file))
+    for cazz in cazzillidict:
+        # extract urls and domains
+        cazz['urldomainlist'] = cazzillo_text_parser(cazz['Cazzillo'])
 
-# generate a fake file pointer with io
-fake_file = io.StringIO(respo.decode("utf-8"))
-# read the fake file in a csv dict and convert to list
-cazzillidict = list(csv.DictReader(fake_file))
-for cazz in cazzillidict:
-    # extract urls and domains
-    cazz['urldomainlist'] = cazzillo_text_parser(cazz['Cazzillo'])
+        if cazz['urldomainlist'] == []:
+            del cazz['Nome']
+            del cazz['Cazzillo']
+            del cazz['urldomainlist']
+            del cazz['Data']
+        else:
+            # convert Data to datetime
+            cazz['Data'] = datetime.strptime(cazz['Data'], '%a %b %d %Y %H:%M:%S GMT%z (%Z)')
 
-    if cazz['urldomainlist'] == []:
-        del cazz['Nome']
-        del cazz['Cazzillo']
-        del cazz['urldomainlist']
-        del cazz['Data']
-    else:
-        # convert Data to datetime
-        cazz['Data'] = datetime.strptime(cazz['Data'], '%a %b %d %Y %H:%M:%S GMT%z (%Z)')
+    # Data example:
+    #{'Cazzillo'     : 'Altro package manager molto famoso perac è homebrew https://brew.sh/, in particolare cask installa programmi per Mac proprio eliminando lo scarica apri copia in applicazioni etc, tutto da command line https://caskroom.github.io/ #cazzillo',
+    # 'Data'         : datetime.datetime(2017, 8, 10, 19, 29, 12, tzinfo=datetime.timezone(datetime.timedelta(0), 'UTC')),
+    # 'Nome'         : "Mario D'Amore",
+    # 'urldomainlist': [
+    #                   {'domain': 'brew.sh', 'url': 'https://brew.sh/'},
+    #                   {'domain': 'caskroom.github.io', 'url': 'https://caskroom.github.io/'}
+    #                  ]
+    # }
 
-# Data example:
-#{'Cazzillo'     : 'Altro package manager molto famoso perac è homebrew https://brew.sh/, in particolare cask installa programmi per Mac proprio eliminando lo scarica apri copia in applicazioni etc, tutto da command line https://caskroom.github.io/ #cazzillo',
-# 'Data'         : datetime.datetime(2017, 8, 10, 19, 29, 12, tzinfo=datetime.timezone(datetime.timedelta(0), 'UTC')),
-# 'Nome'         : "Mario D'Amore",
-# 'urldomainlist': [
-#                   {'domain': 'brew.sh', 'url': 'https://brew.sh/'},
-#                   {'domain': 'caskroom.github.io', 'url': 'https://caskroom.github.io/'}
-#                  ]
-# }
+    # rendering the data with jinja2 and bootstrap CDN css (you need to be online!)
+    t = Template("""
+    <!DOCTYPE HTML>
+<!-- saved from url=(0037)http://geekcookies.github.io/episodi/ -->
+<!DOCTYPE html PUBLIC "" ""><HTML lang="en-us"><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+   <LINK href="http://gmpg.org/xfn/11" rel="profile">   
+<META http-equiv="X-UA-Compatible" content="IE=edge">   
+<META http-equiv="content-type" content="text/html; charset=utf-8">   <!-- Enable responsiveness on mobile devices--> 
+  
+<META name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> 
+  <TITLE>          Episodi · Geek Cookies.       </TITLE>   <!-- CSS -->   <LINK 
+href="Episodi%20·%20Geek%20Cookies__file/poole.css" rel="stylesheet">   <LINK 
+href="Episodi%20·%20Geek%20Cookies__file/syntax.css" rel="stylesheet">   <LINK 
+href="Episodi%20·%20Geek%20Cookies__file/lanyon.css" rel="stylesheet">   <LINK 
+href="Episodi%20·%20Geek%20Cookies__file/css.css" rel="stylesheet">     <!-- Icons --> 
+  <LINK href="/public/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" 
+sizes="144x144">   <LINK href="/public/favicon.ico" rel="shortcut icon">   <!-- RSS --> 
+  <LINK title="RSS" href="/feed.xml" rel="alternate" type="application/rss+xml"> 
+  
+<SCRIPT>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-# rendering the data with jinja2 and bootstrap CDN css (you need to be online!)
-t = Template(
-"""
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cazzillopedia</title>
-  <meta name="description" content="Cazzillopedia da Telefram">
-  <meta name="author" content="geekcookies">
-<!-- Latest compiled and minified CSS bootstrap3 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
+  ga('create', 'UA-56320158-1', 'auto');
+  ga('send', 'pageview');
 
-<body>
-<H1 ALIGN=CENTER><P><B>Elenco Cazzilli</B></H1></P>
-<div class="container-fluid">
-{% for cazz in cazzinput %}
-<div class="cazzilloentry">
-    <div class="img-rounded" style="background-color:#D6EAF8;">
+</SCRIPT>
+   
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>   
+<BODY class="theme-base-0g"><!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. --> 
+<INPUT class="sidebar-checkbox" id="sidebar-checkbox" type="checkbox"> <!-- Toggleable sidebar --> 
+<DIV class="sidebar" id="sidebar">
+<DIV class="sidebar-item">
+<P>Join the Dark Side of the Geek: we have Cookies.</P></DIV><NAV class="sidebar-nav"><A 
+class="sidebar-nav-item" href="http://geekcookies.github.io/episodi/">Home</A><A 
+class="sidebar-nav-item" 
+href="http://geekcookies.github.io/contactus/">Contattaci</A><A class="sidebar-nav-item active" 
+href="http://geekcookies.github.io/episodi/">Episodi</A><A class="sidebar-nav-item" 
+href="http://geekcookies.github.io/whatisthis/">Cos’è GeekCookies</A><A class="sidebar-nav-item" 
+href="http://geekcookies.github.io/whoarewe/">Chi siamo</A><!--Theese elements culd not be the active page:external link--> 
+    <A class="sidebar-nav-item" 
+href="http://geekcookies.github.io/feed.xml">Feed RSS</A><A class="sidebar-nav-item" 
+href="http://geekcookies.github.io/amazon/">Amazon</A><A class="sidebar-nav-item" 
+href="http://geekcookies.github.io/itunes/">iTunes</A></NAV>
+<DIV class="sidebar-item">
+<P>    Basato su <A href="http://jekyllrb.com/">jekyll</A> e sul template <A 
+href="http://lanyon.getpoole.com/">poole/lanyon</A>.     </P></DIV></DIV><!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. --> 
     
-    <div style="float: left"> {{ cazz['Cazzillo']}} </div>
-    <div style="text-align: right"> {{ cazz['Nome']}}</div>
-    <div style="text-align: right"> {{ cazz['Data']}} </div>
-            <ol>
-                {% for udl in cazz['urldomainlist'] %}
-                    <li><a href="{{udl['url']}}">{{udl['domain']}}</a></li>
-                {% endfor %}
-            </ol>
-    </div>
-</div>
-{% endfor %}
-</div>
-</body>
-</html>
-""")
+<DIV class="wrap">
+<DIV class="masthead">
+<DIV class="container">
+<H3 class="masthead-title"><IMG class="site-logo" src="Episodi%20·%20Geek%20Cookies__file/icon.png"> 
+            <A title="Home" href="http://geekcookies.github.io/">Geek 
+Cookies.</A>             <SMALL>the Dark Side of the Geek.</SMALL>           
+</H3></DIV></DIV>
+<DIV class="container content">
+<DIV class="page">
+<H1 class="page-title">Cazzilli</H1>
+<UL>
 
-# write the rendered template to a file
-with open("geekcookies_cazzilli_telegram.csv.html", "w+") as fow:
-        for a in t.render(cazzinput=cazzillidict):
-            try:
-                fow.write(a)
-            except:
-                print(".")
+{% for cazz in cazzinput %}
+        <LI>
+        <P>{{ cazz['Data']}} » {{ cazz['Nome']}} » {{ cazz['Cazzillo']}} {% for udl in cazz['urldomainlist'] %} <a href="{{udl['url']}}"> {{udl['domain']}}</a>{% endfor %}</P></LI>
+    {% endfor %}
+
+
+  
+</UL></DIV></DIV></DIV><LABEL class="sidebar-toggle" 
+for="sidebar-checkbox"></LABEL>
+<SCRIPT>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </SCRIPT>
+   </BODY></HTML>
+    """)
+
+    # write the rendered template to a file
+    with open("geekcookies_cazzilli_telegram.html", "w+") as fow:
+            fow.write(t.render(cazzinput=cazzillidict))

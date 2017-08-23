@@ -1,0 +1,192 @@
+.highlight .hll {
+	background-color: rgb(255, 255, 204);
+}
+.highlight .c {
+	color: rgb(153, 153, 153);
+}
+.highlight .err {
+	color: rgb(170, 0, 0); background-color: rgb(255, 170, 170);
+}
+.highlight .k {
+	color: rgb(0, 102, 153);
+}
+.highlight .o {
+	color: rgb(85, 85, 85);
+}
+.highlight .cm {
+	color: rgb(0, 153, 255); font-style: italic;
+}
+.highlight .cp {
+	color: rgb(0, 153, 153);
+}
+.highlight .c1 {
+	color: rgb(153, 153, 153);
+}
+.highlight .cs {
+	color: rgb(153, 153, 153);
+}
+.highlight .gd {
+	border: 1px solid rgb(204, 0, 0); border-image: none; background-color: rgb(255, 204, 204);
+}
+.highlight .ge {
+	font-style: italic;
+}
+.highlight .gr {
+	color: rgb(255, 0, 0);
+}
+.highlight .gh {
+	color: rgb(0, 51, 0);
+}
+.highlight .gi {
+	border: 1px solid rgb(0, 204, 0); border-image: none; background-color: rgb(204, 255, 204);
+}
+.highlight .go {
+	color: rgb(170, 170, 170);
+}
+.highlight .gp {
+	color: rgb(0, 0, 153);
+}
+.highlight .gs {
+	
+}
+.highlight .gu {
+	color: rgb(0, 51, 0);
+}
+.highlight .gt {
+	color: rgb(153, 204, 102);
+}
+.highlight .kc {
+	color: rgb(0, 102, 153);
+}
+.highlight .kd {
+	color: rgb(0, 102, 153);
+}
+.highlight .kn {
+	color: rgb(0, 102, 153);
+}
+.highlight .kp {
+	color: rgb(0, 102, 153);
+}
+.highlight .kr {
+	color: rgb(0, 102, 153);
+}
+.highlight .kt {
+	color: rgb(0, 119, 136);
+}
+.highlight .m {
+	color: rgb(255, 102, 0);
+}
+.highlight .s {
+	color: rgb(212, 73, 80);
+}
+.highlight .na {
+	color: rgb(79, 159, 207);
+}
+.highlight .nb {
+	color: rgb(51, 102, 102);
+}
+.highlight .nc {
+	color: rgb(0, 170, 136);
+}
+.highlight .no {
+	color: rgb(51, 102, 0);
+}
+.highlight .nd {
+	color: rgb(153, 153, 255);
+}
+.highlight .ni {
+	color: rgb(153, 153, 153);
+}
+.highlight .ne {
+	color: rgb(204, 0, 0);
+}
+.highlight .nf {
+	color: rgb(204, 0, 255);
+}
+.highlight .nl {
+	color: rgb(153, 153, 255);
+}
+.highlight .nn {
+	color: rgb(0, 204, 255);
+}
+.highlight .nt {
+	color: rgb(47, 111, 159);
+}
+.highlight .nv {
+	color: rgb(0, 51, 51);
+}
+.highlight .ow {
+	color: rgb(0, 0, 0);
+}
+.highlight .w {
+	color: rgb(187, 187, 187);
+}
+.highlight .mf {
+	color: rgb(255, 102, 0);
+}
+.highlight .mh {
+	color: rgb(255, 102, 0);
+}
+.highlight .mi {
+	color: rgb(255, 102, 0);
+}
+.highlight .mo {
+	color: rgb(255, 102, 0);
+}
+.highlight .sb {
+	color: rgb(204, 51, 0);
+}
+.highlight .sc {
+	color: rgb(204, 51, 0);
+}
+.highlight .sd {
+	color: rgb(204, 51, 0); font-style: italic;
+}
+.highlight .s2 {
+	color: rgb(204, 51, 0);
+}
+.highlight .se {
+	color: rgb(204, 51, 0);
+}
+.highlight .sh {
+	color: rgb(204, 51, 0);
+}
+.highlight .si {
+	color: rgb(170, 0, 0);
+}
+.highlight .sx {
+	color: rgb(204, 51, 0);
+}
+.highlight .sr {
+	color: rgb(51, 170, 170);
+}
+.highlight .s1 {
+	color: rgb(204, 51, 0);
+}
+.highlight .ss {
+	color: rgb(255, 204, 51);
+}
+.highlight .bp {
+	color: rgb(51, 102, 102);
+}
+.highlight .vc {
+	color: rgb(0, 51, 51);
+}
+.highlight .vg {
+	color: rgb(0, 51, 51);
+}
+.highlight .vi {
+	color: rgb(0, 51, 51);
+}
+.highlight .il {
+	color: rgb(255, 102, 0);
+}
+.css .o {
+	color: rgb(153, 153, 153);
+}
+.css .o + .nt {
+	color: rgb(153, 153, 153);
+}
+.css .nt + .nt {
+	color: rgb(153, 153, 153);
+}

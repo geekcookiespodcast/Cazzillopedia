@@ -1,0 +1,255 @@
+* {
+	box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+html {
+	margin: 0px; padding: 0px;
+}
+body {
+	margin: 0px; padding: 0px;
+}
+html {
+	line-height: 1.5; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px;
+}
+@media all and (min-width:38em)
+{
+html {
+	font-size: 20px;
+}
+}
+body {
+	color: rgb(36, 216, 48); -ms-text-size-adjust: 100%; background-color: rgb(16, 16, 16); -webkit-text-size-adjust: 100%;
+}
+a {
+	color: rgb(38, 139, 210); text-decoration: none;
+}
+a strong {
+	color: inherit;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:focus {
+	text-decoration: underline;
+}
+h1 {
+	color: rgb(49, 49, 49); line-height: 1.25; font-weight: bold; margin-bottom: 0.5rem; text-rendering: optimizeLegibility;
+}
+h2 {
+	color: rgb(49, 49, 49); line-height: 1.25; font-weight: bold; margin-bottom: 0.5rem; text-rendering: optimizeLegibility;
+}
+h3 {
+	color: rgb(49, 49, 49); line-height: 1.25; font-weight: bold; margin-bottom: 0.5rem; text-rendering: optimizeLegibility;
+}
+h4 {
+	color: rgb(49, 49, 49); line-height: 1.25; font-weight: bold; margin-bottom: 0.5rem; text-rendering: optimizeLegibility;
+}
+h5 {
+	color: rgb(49, 49, 49); line-height: 1.25; font-weight: bold; margin-bottom: 0.5rem; text-rendering: optimizeLegibility;
+}
+h6 {
+	color: rgb(49, 49, 49); line-height: 1.25; font-weight: bold; margin-bottom: 0.5rem; text-rendering: optimizeLegibility;
+}
+h1 {
+	font-size: 2rem;
+}
+h2 {
+	font-size: 1.5rem; margin-top: 1rem;
+}
+h3 {
+	font-size: 1.25rem; margin-top: 1.5rem;
+}
+h4 {
+	font-size: 1rem; margin-top: 1rem;
+}
+h5 {
+	font-size: 1rem; margin-top: 1rem;
+}
+h6 {
+	font-size: 1rem; margin-top: 1rem;
+}
+p {
+	margin-top: 0px; margin-bottom: 1rem;
+}
+strong {
+	color: rgb(3, 186, 15);
+}
+ul {
+	margin-top: 0px; margin-bottom: 1rem;
+}
+ol {
+	margin-top: 0px; margin-bottom: 1rem;
+}
+dl {
+	margin-top: 0px; margin-bottom: 1rem;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 0.5rem;
+}
+hr {
+	border-width: 1px 0px; border-style: solid none; border-color: rgb(36, 216, 48) currentColor; margin: 1.5rem 0px; border-image: none; position: relative;
+}
+abbr {
+	color: rgb(85, 85, 85); text-transform: uppercase; font-size: 85%; font-weight: bold;
+}
+abbr[title] {
+	border-bottom-color: rgb(229, 229, 229); border-bottom-width: 1px; border-bottom-style: dotted; cursor: help;
+}
+code {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+pre {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+code {
+	padding: 0.25em 0.5em; border-radius: 3px; color: rgb(191, 97, 106); font-size: 85%; background-color: rgb(249, 249, 249);
+}
+pre {
+	padding: 1rem; line-height: 1.4; font-size: 0.8rem; margin-top: 0px; margin-bottom: 1rem; display: block; white-space: pre-wrap; -ms-word-break: break-all; -ms-word-wrap: break-word; background-color: rgb(249, 249, 249);
+}
+pre code {
+	padding: 0px; color: inherit; font-size: 100%; background-color: transparent;
+}
+.highlight {
+	border-radius: 4px; margin-bottom: 1rem;
+}
+.highlight pre {
+	margin-bottom: 0px;
+}
+.gist .gist-file {
+	font-family: Menlo, Monaco, "Courier New", monospace !important;
+}
+.gist .markdown-body {
+	padding: 15px;
+}
+.gist pre {
+	padding: 0px; background-color: transparent;
+}
+.gist .gist-file .gist-data {
+	line-height: 1.4; font-size: 0.8rem !important;
+}
+.gist code {
+	padding: 0px; border-radius: 0px; color: inherit; background-color: transparent;
+}
+blockquote {
+	margin: 0.8rem 0px; padding: 0.5rem 1rem; color: rgb(77, 255, 89); border-left-color: rgb(42, 42, 42); border-left-width: 0.25rem; border-left-style: solid;
+}
+blockquote p:last-child {
+	margin-bottom: 0px;
+}
+@media all and (min-width:30em)
+{
+blockquote {
+	padding-right: 5rem; padding-left: 1.25rem;
+}
+}
+img.site-logo {
+	border-radius: 16px; width: 64px; margin-right: 8px;
+}
+table {
+	border: 1px solid rgb(229, 229, 229); border-image: none; width: 100%; margin-bottom: 1rem; border-collapse: collapse;
+}
+td {
+	padding: 0.25rem 0.5rem; border: 1px solid rgb(164, 164, 164); border-image: none;
+}
+th {
+	padding: 0.25rem 0.5rem; border: 1px solid rgb(164, 164, 164); border-image: none;
+}
+tbody tr:nth-child(2n+1) td {
+	color: rgb(16, 16, 16); background-color: rgb(177, 255, 189);
+}
+tbody tr:nth-child(2n+1) th {
+	color: rgb(16, 16, 16); background-color: rgb(177, 255, 189);
+}
+.lead {
+	font-size: 1.25rem; font-weight: 300;
+}
+.message {
+	padding: 1rem; color: rgb(113, 113, 113); margin-bottom: 1rem; background-color: rgb(249, 249, 249);
+}
+.container {
+	padding-right: 1rem; padding-left: 1rem; margin-right: auto; margin-left: auto; max-width: 38rem;
+}
+.masthead {
+	padding-top: 1rem; padding-bottom: 1rem; margin-bottom: 3rem;
+}
+.masthead-title {
+	color: rgb(80, 80, 80); margin-top: 0px; margin-bottom: 0px;
+}
+.masthead-title a {
+	color: rgb(80, 80, 80);
+}
+.masthead-title small {
+	color: rgb(192, 192, 192); letter-spacing: 0px; font-size: 75%; font-weight: 400;
+}
+.page {
+	margin-bottom: 4em;
+}
+.post {
+	margin-bottom: 4em;
+}
+.page-title {
+	color: rgb(48, 48, 48);
+}
+.post-title {
+	color: rgb(48, 48, 48);
+}
+.post-title a {
+	color: rgb(48, 48, 48);
+}
+.page-title {
+	margin-top: 0px;
+}
+.post-title {
+	margin-top: 0px;
+}
+.post-date {
+	color: rgb(154, 154, 154); margin-top: -0.5rem; margin-bottom: 1rem; display: block;
+}
+.related {
+	padding-top: 2rem; padding-bottom: 2rem; border-top-color: rgb(238, 238, 238); border-top-width: 1px; border-top-style: solid;
+}
+.related-posts {
+	list-style: none; padding-left: 0px;
+}
+.related-posts h3 {
+	margin-top: 0px;
+}
+.related-posts li small {
+	color: rgb(153, 153, 153); font-size: 75%;
+}
+.related-posts li a:hover {
+	color: rgb(38, 139, 210); text-decoration: none;
+}
+.related-posts li a:hover small {
+	color: inherit;
+}
+.pagination {
+	text-align: center; color: rgb(204, 204, 204); overflow: hidden; font-family: "PT Sans", Helvetica, Arial, sans-serif; margin-right: -1rem; margin-left: -1rem;
+}
+.pagination-item {
+	padding: 1rem; border: 1px solid rgb(238, 238, 238); border-image: none; display: block;
+}
+:first-child.pagination-item {
+	margin-bottom: -1px;
+}
+a.pagination-item:hover {
+	background-color: rgb(245, 245, 245);
+}
+@media all and (min-width:30em)
+{
+.pagination {
+	margin: 3rem 0px;
+}
+.pagination-item {
+	width: 50%; float: left;
+}
+:first-child.pagination-item {
+	margin-bottom: 0px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;
+}
+:last-child.pagination-item {
+	margin-left: -1px; border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+}
+}

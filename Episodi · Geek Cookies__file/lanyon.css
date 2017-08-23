@@ -1,0 +1,465 @@
+html {
+	-ms-overflow-x: hidden;
+}
+body {
+	-ms-overflow-x: hidden;
+}
+html {
+	font-family: "PT Serif", Georgia, "Times New Roman", serif;
+}
+h1 {
+	color: rgb(49, 49, 49); letter-spacing: -0.02rem; font-family: "PT Sans", Helvetica, Arial, sans-serif; font-weight: 400;
+}
+h2 {
+	color: rgb(49, 49, 49); letter-spacing: -0.02rem; font-family: "PT Sans", Helvetica, Arial, sans-serif; font-weight: 400;
+}
+h3 {
+	color: rgb(49, 49, 49); letter-spacing: -0.02rem; font-family: "PT Sans", Helvetica, Arial, sans-serif; font-weight: 400;
+}
+h4 {
+	color: rgb(49, 49, 49); letter-spacing: -0.02rem; font-family: "PT Sans", Helvetica, Arial, sans-serif; font-weight: 400;
+}
+h5 {
+	color: rgb(49, 49, 49); letter-spacing: -0.02rem; font-family: "PT Sans", Helvetica, Arial, sans-serif; font-weight: 400;
+}
+h6 {
+	color: rgb(49, 49, 49); letter-spacing: -0.02rem; font-family: "PT Sans", Helvetica, Arial, sans-serif; font-weight: 400;
+}
+.wrap {
+	width: 100%; position: relative;
+}
+.container {
+	max-width: 28rem;
+}
+@media all and (min-width:38em)
+{
+.container {
+	max-width: 32rem;
+}
+}
+@media all and (min-width:56em)
+{
+.container {
+	max-width: 38rem;
+}
+}
+.masthead {
+	padding-top: 1rem; padding-bottom: 1rem; margin-bottom: 3rem; border-bottom-color: rgb(36, 216, 48); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.masthead-title {
+	color: rgb(80, 80, 80); margin-top: 0px; margin-bottom: 0px;
+}
+.masthead-title a {
+	color: rgb(80, 80, 80);
+}
+.masthead-title small {
+	color: rgb(192, 192, 192); letter-spacing: 0px; font-size: 75%; font-weight: 400;
+}
+@media all and (max-width:48em)
+{
+.masthead-title {
+	text-align: center;
+}
+.masthead-title small {
+	display: none;
+}
+}
+.sidebar {
+	transition:0.3s ease-in-out; left: -14rem; top: 0px; width: 14rem; bottom: 0px; color: rgba(255, 255, 255, 0.6); font-family: "PT Sans", Helvetica, Arial, sans-serif; font-size: 0.87rem; visibility: hidden; position: fixed; -ms-overflow-y: auto; background-color: rgb(32, 32, 32); -webkit-transition: all .3s ease-in-out;
+}
+@media all and (min-width:30em)
+{
+.sidebar {
+	font-size: 0.75rem;
+}
+}
+.sidebar a {
+	color: rgb(255, 255, 255); font-weight: normal;
+}
+.sidebar-item {
+	padding: 1rem;
+}
+.sidebar-item p:last-child {
+	margin-bottom: 0px;
+}
+.sidebar-nav {
+	border-bottom-color: rgba(255, 255, 255, 0.1); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.sidebar-nav-item {
+	padding: 0.5rem 1rem; border-top-color: rgba(255, 255, 255, 0.1); border-top-width: 1px; border-top-style: solid; display: block;
+}
+.sidebar-nav-item.active {
+	border-color: transparent; text-decoration: none; background-color: rgba(255, 255, 255, 0.1);
+}
+a.sidebar-nav-item:hover {
+	border-color: transparent; text-decoration: none; background-color: rgba(255, 255, 255, 0.1);
+}
+a.sidebar-nav-item:focus {
+	border-color: transparent; text-decoration: none; background-color: rgba(255, 255, 255, 0.1);
+}
+@media all and (min-width:48em)
+{
+.sidebar-item {
+	padding: 1.5rem;
+}
+.sidebar-nav-item {
+	padding-right: 1.5rem; padding-left: 1.5rem;
+}
+}
+.sidebar-checkbox {
+	display: none;
+}
+.sidebar-toggle {
+	padding: 0.5rem 0.65rem; border-radius: 4px; left: 1rem; top: 1rem; width: 2.2rem; color: rgb(80, 80, 80); display: block; position: absolute; cursor: pointer; background-color: rgb(255, 255, 255);
+}
+.sidebar-toggle::before {
+	width: 100%; padding-bottom: 0.12rem; border-top-color: currentColor; border-bottom-color: currentColor; border-top-width: 0.37rem; border-bottom-width: 0.12rem; border-top-style: double; border-bottom-style: solid; display: block; content: ""; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.sidebar-toggle:active {
+	color: rgb(255, 255, 255); background-color: rgb(80, 80, 80);
+}
+:checked#sidebar-checkbox ~ .sidebar-toggle {
+	color: rgb(255, 255, 255); background-color: rgb(80, 80, 80);
+}
+@media all and (min-width:30.1em)
+{
+.sidebar-toggle {
+	width: 2.25rem; position: fixed;
+}
+.sidebar-toggle::before {
+	padding-bottom: 0.15rem; border-top-width: 0.45rem; border-bottom-width: 0.15rem;
+}
+}
+.wrap {
+	backface-visibility: hidden; -webkit-backface-visibility: hidden;
+}
+.sidebar {
+	backface-visibility: hidden; -webkit-backface-visibility: hidden;
+}
+.sidebar-toggle {
+	backface-visibility: hidden; -webkit-backface-visibility: hidden;
+}
+.wrap {
+	transition:transform 0.3s ease-in-out; -webkit-transition: -webkit-transform .3s ease-in-out;
+}
+.sidebar-toggle {
+	transition:transform 0.3s ease-in-out; -webkit-transition: -webkit-transform .3s ease-in-out;
+}
+:checked#sidebar-checkbox + .sidebar {
+	visibility: visible; z-index: 10;
+}
+:checked#sidebar-checkbox ~ .sidebar {
+	transform: translateX(14rem); -webkit-transform: translateX(14rem);
+}
+:checked#sidebar-checkbox ~ .wrap {
+	transform: translateX(14rem); -webkit-transform: translateX(14rem);
+}
+:checked#sidebar-checkbox ~ .sidebar-toggle {
+	transform: translateX(14rem); -webkit-transform: translateX(14rem);
+}
+.page {
+	margin-bottom: 4em;
+}
+.post {
+	margin-bottom: 4em;
+}
+.page-title {
+	color: rgb(48, 48, 48);
+}
+.post-title {
+	color: rgb(48, 48, 48);
+}
+.post-title a {
+	color: rgb(48, 48, 48);
+}
+.page-title {
+	margin-top: 0px;
+}
+.post-title {
+	margin-top: 0px;
+}
+.post-date {
+	color: rgb(154, 154, 154); margin-top: -0.5rem; margin-bottom: 1rem; display: block;
+}
+.related {
+	padding-top: 2rem; padding-bottom: 2rem; border-top-color: rgb(36, 216, 48); border-top-width: 1px; border-top-style: solid;
+}
+.related-posts {
+	list-style: none; padding-left: 0px;
+}
+.related-posts h3 {
+	margin-top: 0px;
+}
+.related-posts li small {
+	color: rgb(153, 153, 153); font-size: 75%;
+}
+.related-posts li a:hover {
+	color: rgb(38, 139, 210); text-decoration: none;
+}
+.related-posts li a:hover small {
+	color: inherit;
+}
+.pagination {
+	text-align: center; color: rgb(204, 204, 204); overflow: hidden; font-family: "PT Sans", Helvetica, Arial, sans-serif; margin-right: -1rem; margin-left: -1rem;
+}
+.pagination-item {
+	padding: 1rem; border: 1px solid rgb(238, 238, 238); border-image: none; display: block;
+}
+:first-child.pagination-item {
+	margin-bottom: -1px;
+}
+a.pagination-item:hover {
+	background-color: rgb(245, 245, 245);
+}
+@media all and (min-width:30em)
+{
+.pagination {
+	margin: 3rem 0px;
+}
+.pagination-item {
+	width: 50%; float: left;
+}
+:first-child.pagination-item {
+	margin-bottom: 0px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;
+}
+:last-child.pagination-item {
+	margin-left: -1px; border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+}
+}
+.layout-reverse .sidebar {
+	left: auto; right: -14rem;
+}
+.layout-reverse .sidebar-toggle {
+	left: auto; right: 1rem;
+}
+.layout-reverse :checked#sidebar-checkbox ~ .sidebar {
+	transform: translateX(-14rem); -webkit-transform: translateX(-14rem);
+}
+.layout-reverse :checked#sidebar-checkbox ~ .wrap {
+	transform: translateX(-14rem); -webkit-transform: translateX(-14rem);
+}
+.layout-reverse :checked#sidebar-checkbox ~ .sidebar-toggle {
+	transform: translateX(-14rem); -webkit-transform: translateX(-14rem);
+}
+.theme-base-08 .sidebar {
+	background-color: rgb(172, 65, 66);
+}
+.theme-base-08 .sidebar-toggle:active {
+	background-color: rgb(172, 65, 66);
+}
+.theme-base-08 :checked#sidebar-checkbox ~ .sidebar-toggle {
+	background-color: rgb(172, 65, 66);
+}
+.theme-base-08 .container a {
+	color: rgb(172, 65, 66);
+}
+.theme-base-08 .sidebar-toggle {
+	color: rgb(172, 65, 66);
+}
+.theme-base-08 .related-posts li a:hover {
+	color: rgb(172, 65, 66);
+}
+.theme-base-09 .sidebar {
+	background-color: rgb(210, 132, 69);
+}
+.theme-base-09 .sidebar-toggle:active {
+	background-color: rgb(210, 132, 69);
+}
+.theme-base-09 :checked#sidebar-checkbox ~ .sidebar-toggle {
+	background-color: rgb(210, 132, 69);
+}
+.theme-base-09 .container a {
+	color: rgb(210, 132, 69);
+}
+.theme-base-09 .sidebar-toggle {
+	color: rgb(210, 132, 69);
+}
+.theme-base-09 .related-posts li a:hover {
+	color: rgb(210, 132, 69);
+}
+.theme-base-0a .sidebar {
+	background-color: rgb(244, 191, 117);
+}
+.theme-base-0a .sidebar-toggle:active {
+	background-color: rgb(244, 191, 117);
+}
+.theme-base-0a :checked#sidebar-checkbox ~ .sidebar-toggle {
+	background-color: rgb(244, 191, 117);
+}
+.theme-base-0a .container a {
+	color: rgb(244, 191, 117);
+}
+.theme-base-0a .sidebar-toggle {
+	color: rgb(244, 191, 117);
+}
+.theme-base-0a .related-posts li a:hover {
+	color: rgb(244, 191, 117);
+}
+.theme-base-0b .sidebar {
+	background-color: rgb(144, 169, 89);
+}
+.theme-base-0b .sidebar-toggle:active {
+	background-color: rgb(144, 169, 89);
+}
+.theme-base-0b :checked#sidebar-checkbox ~ .sidebar-toggle {
+	background-color: rgb(144, 169, 89);
+}
+.theme-base-0b .container a {
+	color: rgb(144, 169, 89);
+}
+.theme-base-0b .sidebar-toggle {
+	color: rgb(144, 169, 89);
+}
+.theme-base-0b .related-posts li a:hover {
+	color: rgb(144, 169, 89);
+}
+.theme-base-0c .sidebar {
+	background-color: rgb(117, 181, 170);
+}
+.theme-base-0c .sidebar-toggle:active {
+	background-color: rgb(117, 181, 170);
+}
+.theme-base-0c :checked#sidebar-checkbox ~ .sidebar-toggle {
+	background-color: rgb(117, 181, 170);
+}
+.theme-base-0c .container a {
+	color: rgb(117, 181, 170);
+}
+.theme-base-0c .sidebar-toggle {
+	color: rgb(117, 181, 170);
+}
+.theme-base-0c .related-posts li a:hover {
+	color: rgb(117, 181, 170);
+}
+.theme-base-0d .sidebar {
+	background-color: rgb(106, 159, 181);
+}
+.theme-base-0d .sidebar-toggle:active {
+	background-color: rgb(106, 159, 181);
+}
+.theme-base-0d :checked#sidebar-checkbox ~ .sidebar-toggle {
+	background-color: rgb(106, 159, 181);
+}
+.theme-base-0d .container a {
+	color: rgb(106, 159, 181);
+}
+.theme-base-0d .sidebar-toggle {
+	color: rgb(106, 159, 181);
+}
+.theme-base-0d .related-posts li a:hover {
+	color: rgb(106, 159, 181);
+}
+.theme-base-0e .sidebar {
+	background-color: rgb(170, 117, 159);
+}
+.theme-base-0e .sidebar-toggle:active {
+	background-color: rgb(170, 117, 159);
+}
+.theme-base-0e :checked#sidebar-checkbox ~ .sidebar-toggle {
+	background-color: rgb(170, 117, 159);
+}
+.theme-base-0e .container a {
+	color: rgb(170, 117, 159);
+}
+.theme-base-0e .sidebar-toggle {
+	color: rgb(170, 117, 159);
+}
+.theme-base-0e .related-posts li a:hover {
+	color: rgb(170, 117, 159);
+}
+.theme-base-0f .sidebar {
+	background-color: rgb(143, 85, 54);
+}
+.theme-base-0f .sidebar-toggle:active {
+	background-color: rgb(143, 85, 54);
+}
+.theme-base-0f :checked#sidebar-checkbox ~ .sidebar-toggle {
+	background-color: rgb(143, 85, 54);
+}
+.theme-base-0f .container a {
+	color: rgb(143, 85, 54);
+}
+.theme-base-0f .sidebar-toggle {
+	color: rgb(143, 85, 54);
+}
+.theme-base-0f .related-posts li a:hover {
+	color: rgb(143, 85, 54);
+}
+.theme-base-0g .sidebar {
+	color: rgb(84, 255, 96); background-color: rgb(16, 16, 16);
+}
+.theme-base-0g .sidebar-toggle:active {
+	color: rgb(84, 255, 96); background-color: rgb(16, 16, 16);
+}
+.theme-base-0g :checked#sidebar-checkbox ~ .sidebar-toggle {
+	color: rgb(84, 255, 96); background-color: rgb(16, 16, 16);
+}
+.theme-base-0g .sidebar-toggle {
+	color: rgb(32, 32, 32);
+}
+.theme-base-0g .related-posts li a:hover {
+	color: rgb(32, 32, 32);
+}
+.theme-base-0g .page-title {
+	color: rgb(3, 186, 15);
+}
+.theme-base-0g .post-title {
+	color: rgb(3, 186, 15);
+}
+.theme-base-0g .post-title a {
+	color: rgb(3, 186, 15);
+}
+.theme-base-0g .masthead-title {
+	color: rgb(33, 218, 14);
+}
+.theme-base-0g .masthead-title a {
+	color: rgb(33, 218, 14);
+}
+.theme-base-0g .masthead-title small {
+	color: rgb(177, 255, 189);
+}
+.theme-base-0g .post-date {
+	color: rgb(109, 255, 121);
+}
+.theme-base-0g h1 {
+	color: rgb(4, 184, 16);
+}
+h2 {
+	color: rgb(4, 184, 16);
+}
+h3 {
+	color: rgb(4, 184, 16);
+}
+h4 {
+	color: rgb(4, 184, 16);
+}
+h5 {
+	color: rgb(4, 184, 16);
+}
+h6 {
+	color: rgb(4, 184, 16);
+}
+.theme-base-0g .pagination {
+	color: rgb(36, 216, 48);
+}
+.theme-base-0g .pagination-item {
+	border: 1px solid rgb(36, 216, 48); border-image: none;
+}
+.theme-base-0g a {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+audio {
+	width: 100%;
+}
+.sidebar-overlay :checked#sidebar-checkbox ~ .wrap {
+	transform: translateX(0px); -webkit-transform: translateX(0);
+}
+.sidebar-overlay :checked#sidebar-checkbox ~ .sidebar-toggle {
+	box-shadow: 0px 0px 0px 0.25rem #fff;
+}
+.sidebar-overlay :checked#sidebar-checkbox ~ .sidebar {
+	box-shadow: 0.25rem 0px 0.5rem rgba(0,0,0,0.1);
+}
+.layout-reverse.sidebar-overlay :checked#sidebar-checkbox ~ .sidebar {
+	box-shadow: -0.25rem 0px 0.5rem rgba(0,0,0,0.1);
+}
